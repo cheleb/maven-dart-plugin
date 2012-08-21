@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.code.dart.maven</groupId>
+  <artifactId>dart-sample-project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <parent>
+     <groupId>com.google.code.dart</groupId>
+     <artifactId>maven</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+<!--    <dart.home>/Zozoc</dart.home> -->
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.code.dart.maven</groupId>
+        <artifactId>maven-dart-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>dart2js</id>
+            <phase>package</phase>
+            <goals>
+              <goal>dart2js</goal>
+            </goals>
+            <inherited>false</inherited>
+          </execution>
+        </executions>
+        <configuration>
+<!--                <dartHome>/KOKOK</dartHome> -->
+          <dartFiles>
+            <dartFile>mydart.dart</dartFile>
+          </dartFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+
+  </build>
+
+</project>
