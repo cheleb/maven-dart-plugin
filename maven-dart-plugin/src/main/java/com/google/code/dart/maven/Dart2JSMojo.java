@@ -49,6 +49,9 @@ public class Dart2JSMojo extends AbstractDartMojo {
 
 	public void execute() throws MojoExecutionException {
 
+		if(dartHome==null) {
+			throw new MojoExecutionException("DART_HOME must be given (env, properties, configuration)");
+		}
 		getLog().info("DART_HOME:" + dartHome);
 
 		if (dartFile != null && dartFiles != null) {
